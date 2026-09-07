@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1 id="saludo">Hola 👋</h1>
+    <button id="boton">Haz clic</button>
+  </div>
+
+  <script>
+    const mensajes = [
+      "Hola 👋",
+      "¡Hola de nuevo! 😄",
+      "¿Qué tal? 🙌",
+      "¡Sigue haciendo clic! ✨",
+      "¡Hola, hola! 🎉"
+    ];
+    let i = 0;
+    const saludo = document.getElementById("saludo");
+    const boton = document.getElementById("boton");
+
+    boton.addEventListener("click", () => {
+      i = (i + 1) % mensajes.length;
+      saludo.textContent = mensajes[i];
+      saludo.classList.remove("animar");
+      void saludo.offsetWidth;
+      saludo.classList.add("animar");
+    });
+  </script>
+</body>
+</html>
